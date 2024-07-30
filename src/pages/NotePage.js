@@ -13,7 +13,7 @@ const NotePage = () => {
             if (id !== "new") {
                 try {
                     const response = await axios.get(
-                        `http://localhost:5000/api/notes/${id}`,
+                        `https://notes-app-backend-rose.vercel.app/api/notes/${id}`,
                         {
                             headers: {
                                 Authorization: `Bearer ${localStorage.getItem("token")}`,
