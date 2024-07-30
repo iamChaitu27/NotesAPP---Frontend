@@ -13,7 +13,7 @@ const DashboardPage = () => {
     useEffect(() => {
         const fetchNotes = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/api/notes', {
+                const response = await axios.get('https://notes-app-backend-rose.vercel.app/api/notes', {
                     headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
                 });
                 setNotes(response.data);
