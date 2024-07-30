@@ -33,11 +33,11 @@ const NotePage = () => {
     const handleSave = async () => {
         try {
             if (id === "new") {
-                await axios.post("https://note-app-backend-smoky.vercel.app/api/notes", note, {
+                await axios.post(`https://notes-app-backend-rose.vercel.app/api/notes`, note, {
                     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
                 });
             } else {
-                await axios.put(`https://note-app-backend-smoky.vercel.app/api/notes/${id}`, note, {
+                await axios.put(`https://notes-app-backend-rose.vercel.app/api/notes/${id}`, note, {
                     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
                 });
             }
@@ -51,7 +51,7 @@ const NotePage = () => {
         const token = localStorage.getItem('token'); // Ensure the token is correct
 
         try {
-            await axios.delete(`https://note-app-backend-smoky.vercel.app/api/notes/${id}`, {
+            await axios.delete(`https://notes-app-backend-rose.vercel.app/api/notes/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
