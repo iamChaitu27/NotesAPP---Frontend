@@ -13,7 +13,7 @@ const DashboardPage = () => {
     useEffect(() => {
         const fetchNotes = async () => {
             try {
-                const response = await axios.get(`https://notes-app-backend-rose.vercel.app/api/notes`, {
+                const response = await axios.get(`https://notesapp-backend-k5ah.onrender.com/api/notes`, {
                     headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
                 });
                 setNotes(response.data);
@@ -38,7 +38,7 @@ const DashboardPage = () => {
 
     const handleDeleteNote = async (id) => {
         try {
-            await axios.delete(`https://notes-app-backend-rose.vercel.app/api/notes`, {
+            await axios.delete(`https://notesapp-backend-k5ah.onrender.com/api/notes`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
             setNotes(notes.filter(note => note._id !== id));
