@@ -38,7 +38,7 @@ const DashboardPage = () => {
 
     const handleDeleteNote = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/notes`, {
+            await axios.delete(`https://notes-app-backend-rose.vercel.app/api/notes`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
             setNotes(notes.filter(note => note._id !== id));
